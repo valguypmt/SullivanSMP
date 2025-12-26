@@ -49,7 +49,7 @@
             transform: translateY(0);
 }
         section:hover .box {
-            transform: scale(1.05);
+            transform: scale(1.02);
             box-shadow: 0 10px 25px #000000;
 }
 
@@ -164,6 +164,79 @@ a:hover {
     z-index: 9998;
 }
 
+.box img,
+.box iframe {
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+      html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+      .spoiler-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: #ffea00;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.spoiler-btn:hover {
+    background: #fff176;
+}
+
+.spoiler-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.6s ease, opacity 0.4s ease;
+}
+
+.spoiler-content.open {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+    .spoiler {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.spoiler summary {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffea00;
+  padding: 10px 0;
+  list-style: none;
+}
+
+.spoiler summary::-webkit-details-marker {
+  display: none;
+}
+
+.spoiler[open] summary {
+  margin-bottom: 15px;
+}
+ 
+      .spoiler summary {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffea00;
+  padding: 12px 0;
+  list-style: none;
+}
 
       
     </style>
@@ -178,9 +251,9 @@ a:hover {
 <header>
     <h1><u> - SULLIVAN-SMP - </u></h1>
     <h2> 24/7 HomeMade Minecraft Survival Server </h2>
-  <h3 id="server-ip" style="cursor:pointer">IP: <u>countries-sullivan.gl.joinmc.link</u> (nhấn để copy) </h3>
+  <h3 id="server-ip" style="cursor:pointer">IP: <span style="color:#ffea00;">countries-sullivan.gl.joinmc.link</span> (nhấn để copy) </h3>
     <h3>Phiên bản game: 1.21.11 (Newest)</h3>
-	<h3>Server hoạt động từ: 1/1/2026</h3>
+	<h3>Server hoạt động từ: 01/01/2026</h3>
 </header>
 
 <hr>
@@ -253,8 +326,7 @@ a:hover {
         <li> Những Links có thể bạn cần: </li>
         <li> <a href="https://llaun.ch/vi" style="color: #ffea00;">Link tải Legacy Launcher (Cracked Minecraft)</a> </li>
         <li> <a href="https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html" style="color: #ffea00;">Link tải Java SE 21 (cài nếu vào minecraft bị lỗi)</a> </li>
-        <li> <a href="https://modrinth.com/modpack/fabulously-optimized" style="color: #ffea00;">Link tải Optimized modpack cho MC 1.21.11 (optional)</a> </li>
-    <li> <a href="https://www.youtube.com/watch?v=hn4NRB-NhT0" style="color: #ffea00;">Link Video hướng dẫn nếu bên dưới bị lỗi</a> </li>
+        <li> <a href="https://modrinth.com/modpack/fabulously-optimized" style="color: #ffea00;">Link tải Optimized modpack (optional nhưng cải thiện hiệu năng rất nhiều)</a> </li>
 	</ul>
         <iframe 
     width="640" 
@@ -267,6 +339,75 @@ a:hover {
 </iframe>
     </div>
 </section>
+
+  
+  <section>
+  <div class="box">
+    <h2><u>Danh sách mods Server đang sử dụng</u></h2>
+
+    <details class="spoiler">
+      <summary>▶  Nhấn để xem danh sách mod</summary>
+
+      <table class="cool-table">
+        <tr>
+          <th>Tên mod</th>
+          <th>Chức năng</th>
+        </tr>
+<tr><td>Almanac</td><td> Hỗ trợ mod khác </td></tr>
+<tr><td>Alternate Current</td><td> Tối ưu hóa </td></tr>
+<tr><td>AntiXray</td><td> Chống Xray </td></tr>
+<tr><td>C2ME</td><td> Tối ưu hóa </td></tr>
+<tr><td>Chunky</td><td> Công cụ Admin </td></tr>
+<tr><td>Cloth Config</td><td> Hỗ trợ mod khác </td></tr>
+<tr><td>Clumps</td><td> Tối ưu hóa </td></tr>
+<tr><td>CristelLib</td><td> Hỗ trợ mod khác </td></tr>
+<tr><td>Death Count</td><td> Show số lần chết trên Tablist </td></tr>
+<tr><td>DNT Stronghold Overhaul (Lite)</td><td> Nâng cấp công trình </td></tr>
+<tr><td>Dungeons and Taverns (Core)</td><td> Công trình mới </td></tr>
+<tr><td>DNT – Ancient City</td><td> Nâng cấp công trình </td></tr>
+<tr><td>DNT – Desert Temple</td><td> Nâng cấp công trình </td></tr>
+<tr><td>DNT – Jungle Temple</td><td> Nâng cấp công trình </td></tr>
+<tr><td>DNT – Nether Fortress</td><td> Nâng cấp công trình </td></tr>
+<tr><td>DNT – Ocean Monument</td><td> Nâng cấp công trình </td></tr>
+<tr><td>DNT – Pillager Outpost</td><td> Nâng cấp công trình </td></tr>
+<tr><td>DNT – Swamp Hut</td><td> Nâng cấp công trình </td></tr>
+<tr><td>DNT – Woodland Mansion</td><td> Nâng cấp công trình </td></tr>
+<tr><td>EasyAuth</td><td> Mật khẩu cho players </td></tr>
+<tr><td>Explorify</td><td> Công trình mới </td></tr>
+<tr><td>Fabric API</td><td> Hỗ trợ mod khác </td></tr>
+<tr><td>Fabric Language Kotlin</td><td> Hỗ trợ mod khác </td></tr>
+<tr><td>Fastback</td><td> Backup Server </td></tr>
+<tr><td>FerriteCore</td><td> Tối ưu hóa </td></tr>
+<tr><td>FSIT</td><td> Tín năng ngồi </td></tr>
+<tr><td>Geophilic</td><td> Nâng cấp địa hình </td></tr>
+<tr><td>Get It Together Drops</td><td> Tối ưu hóa </td></tr>
+<tr><td>Graves</td><td> Mộ giữ đồ khi chết </td></tr>
+<tr><td>GrimAC</td><td> Chống nhiều loại hack </td></tr>
+<tr><td>InvView</td><td> Công cụ Admin </td></tr>
+<tr><td>Let Me Despawn</td><td> Tối ưu hóa </td></tr>
+<tr><td>Lithium</td><td> Tối ưu hóa </td></tr>
+<tr><td>ModernFix</td><td> Tối ưu hóa </td></tr>
+<tr><td>Noisium</td><td> Tối ưu hóa </td></tr>
+<tr><td>Packet Fixer</td><td> Tối ưu hóa </td></tr>
+<tr><td>Polymer</td><td> Hỗ trợ mod khác </td></tr>
+<tr><td>Resourceful Config</td><td> Hỗ trợ mod khác </td></tr>
+<tr><td>ScalableLux</td><td> Tối ưu hóa </td></tr>
+<tr><td>ServerCore</td><td> Tối ưu hóa </td></tr>
+<tr><td>Skin Restorer</td><td> skins cho players </td></tr>
+<tr><td>Spark</td><td> Tối ưu hóa </td></tr>
+<tr><td>Slumber</td><td> Tối ưu hóa </td></tr>
+<tr><td>Structory</td><td> Công trình mới </td></tr>
+<tr><td>Structure Layout Optimizer</td><td> Tối ưu hóa </td></tr>
+<tr><td>Towns and Towers</td><td> Công trình mới </td></tr>
+<tr><td>True Ending</td><td> Buff Enderdragon cực mạnh </td></tr>
+<tr><td>Very Many Players (VMP)</td><td> Tối ưu hóa </td></tr>
+<tr><td>Vanish</td><td> Công cụ Admin </td></tr>
+     </table>
+    </details>
+
+  </div>
+</section>
+
 
 <hr>
 
@@ -331,6 +472,17 @@ a:hover {
         window.scrollY > 300 ? "block" : "none";
 });
 
+  document.querySelectorAll(".spoiler-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const content = btn.nextElementSibling;
+        content.classList.toggle("open");
+
+        btn.textContent = content.classList.contains("open")
+            ? "Ẩn danh sách mod"
+            : "Xem danh sách mod";
+    });
+});
+
 
 </script>
   
@@ -339,7 +491,6 @@ a:hover {
 </body>
 
 </html>
-
 
 
 
