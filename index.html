@@ -18,12 +18,18 @@
 }
 
         header {
-            padding: 150px;
+            padding: 120px 40px;
             background-image: url("https://i.imgur.com/2WXQhVU.jpeg");
   	      background-size: cover;
   	      background-position: center;
   	      background-repeat: no-repeat;
 	      color: white;
+}
+
+      @media (max-width: 900px) {
+  header {
+    padding: 90px 25px;
+  }
 }
 
         section {
@@ -158,7 +164,7 @@ a:hover {
     width: 100%;
     padding: 10px;
     background: rgba(0,0,0,0.85);
-    color: #ffea00;
+    color: #ffffff;
     font-weight: bold;
     display: none;
     z-index: 9998;
@@ -269,6 +275,82 @@ section {
     transition: background-color 0.3s ease;
 }
 
+      .logo {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 25px auto;
+
+    animation: logoFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.7));
+    transition: transform 0.4s ease;
+}
+
+.logo:hover {
+    transform: scale(1.08) rotate(-1deg);
+}
+
+@keyframes logoFloat {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+      @media (max-width: 600px) {
+    .logo {
+        width: 90px;
+        margin-bottom: 20px;
+    }
+}
+
+      .logo {
+    width: 120px;
+    margin: 0 auto 25px;
+    padding: 15px;
+
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.25);
+
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.12),
+        rgba(255,255,255,0.02)
+    );
+
+    backdrop-filter: blur(6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+      
+      
+      header {
+    animation: headerFade 1.2s ease forwards;
+}
+
+@keyframes headerFade {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+      .version-mark {
+    margin-top: 30px;
+    font-size: 12px;
+    font-family: "Courier New", monospace;
+    color: #ff0000;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    opacity: 0.7;
+    user-select: none;
+}
+
       
     </style>
 </head>
@@ -280,11 +362,14 @@ section {
 </div>
 
 <header>
-    <h1><u> - SULLIVAN-SMP - </u></h1>
+    <h1><u>SULLIVAN-SMP</u></h1>
     <h2> 24/7 HomeMade Minecraft Survival Server </h2>
   <h3 id="server-ip" style="cursor:pointer">IP: <span style="color:#ffea00;">countries-sullivan.gl.joinmc.link</span> (nhấn để copy) </h3>
     <h3>Phiên bản game: 1.21.11 (Newest)</h3>
 	<h3>Server hoạt động từ: 01/01/2026</h3>
+  <p> . </p>
+  <img src="https://i.imgur.com/xzn1hu7.jpeg" class="logo" alt="SullivanSMP Logo"  loading="lazy">
+
 </header>
 
 <hr>
@@ -301,7 +386,7 @@ section {
 	</ul>
     </div>
 
-    <img src="https://i.imgur.com/GcqQgQ5.jpeg">
+    <img src="https://i.imgur.com/GcqQgQ5.jpeg" loading="lazy">
 </div>
 
 </section>
@@ -316,7 +401,7 @@ section {
       <li> Được quản lí bởi người có kinh nghiệm với nhiều servers trước đây </li>
       <li> Thế giới ngày càng mở rộng nhiều tính năng mới và được cập nhật để cho ra phiên bản tốt nhất</li>
 	</ul>
-        <img src="https://i.imgur.com/gBWJmYg.jpeg">
+        <img src="https://i.imgur.com/gBWJmYg.jpeg" loading="lazy">
     </div>
 </section>
  
@@ -330,7 +415,7 @@ section {
       <li>Nói không với hack, xray, cố tình phá máy chủ (nhưng được phép dùng bug-ingame)</li>
     <li> server cũng sẽ được backup thường xuyên phòng trường hợp tệ nhất </li>
 	</ul>
-        <img src="https://i.imgur.com/UReNdpr.jpeg">
+        <img src="https://i.imgur.com/UReNdpr.jpeg" loading="lazy">
     </div>
 </section>
 
@@ -344,7 +429,7 @@ section {
         <li>Nhưng server sẽ tập trung vào sự ổn định , khả năng tiếp cận, tính bền vững lâu dài và trải nghiệm tốt nhất</li>
         <li>Sever sẽ không reset một cách bất ngờ và mọi thay đổi đều sẽ được thông báo rõ ràng nhất có thể.</li>
 	</ul>
-        <img src="https://i.imgur.com/09Yx2Ar.jpeg">
+        <img src="https://i.imgur.com/09Yx2Ar.jpeg" loading="lazy">
     </div>
 </section>
 
@@ -397,11 +482,15 @@ section {
     </tr>
     <tr>
         <td>Làm sao để tham gia?</td>
-        <td>Chỉ cần gắn link vào minecraft như mọi server, và tất nhiên là đúng phiên bản (1.21.11)</td>
+        <td>Chỉ cần gắn IP vào minecraft như mọi server khác, và tất nhiên là đúng phiên bản (1.21.11)</td>
       </tr>
 	  <tr>
         <td>Server có Vanilla hoàn toàn không?</td>
         <td>Ngoài cải thiện vài tín năng bên lề, server sẽ hoàn toàn vanilla, không tiền tệ, đất đai,... (nhưng server không có elytra do hiệu năng không đủ đáp ứng)</td>
+    </tr>
+	   <tr>
+        <td>Các thông tin về server sẽ được thông báo ở đâu?</td>
+        <td>Các thông tin mới nhất về phiên bản, IP, updates, modslist sẽ được cập nhật lên ngay website này liên tục và nhanh nhất có thể</td>
     </tr>
     <tr>
         <td>chưa biết tải, minecraft quá lag?</td>
@@ -504,8 +593,9 @@ section {
   <p>nhóm quản lí server là những người không có chuyên môn, chỉ là hội bạn bè muốn tạo server cho mn cùng chơi chung vui vẻ</p>
   <p>server không có mục đích mở rộng, phát triển thành 1 server lớn (do vấn đề kinh phí và trình độ)</p>
   <p>mong mọi người có khoảng thời gian xây dựng, phát triển, thám hiểm, đào kim cương vui vẻ cùng nhau nhaaaaa :D</p>
-  <hr>
-  <p style="color: #ff0000;"> Sullivan.website version: v1.0 | Updated: 27/12/2025 <p>
+  <div class="version-mark">
+    Sullivan.website · v1.0 · Updated 27/12/2025
+</div>
 
 </footer>
 
@@ -557,6 +647,7 @@ section {
     });
 });
 
+  
 
 </script>
   
@@ -565,6 +656,7 @@ section {
 </body>
 
 </html>
+
 
 
 
