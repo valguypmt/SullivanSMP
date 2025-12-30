@@ -19,7 +19,7 @@
 }
 
         header {
-            padding: 120px 40px;
+            padding: 50px 40px;
             background-image: url("https://i.imgur.com/2WXQhVU.jpeg");
   	      background-size: cover;
   	      background-position: center;
@@ -352,6 +352,97 @@ section {
     user-select: none;
 }
 
+      .status-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: rgba(0,0,0,0.65);
+  border-radius: 999px;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.status-box .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: gray;
+}
+
+/* optional subtle pulse while checking */
+.status-box.checking {
+  opacity: 0.85;
+}
+
+      .spacer {
+  height: 20px;      /* adjust */
+  margin: 0;
+  visibility: hidden;
+}
+      
+      .copy-tooltip {
+  position: fixed;
+  padding: 6px 12px;
+  background: rgba(0,0,0,0.85);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -20px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 10000;
+}
+
+.copy-tooltip.show {
+  opacity: 1;
+  transform: translate(-50%, -35px);
+}
+
+.server-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.server-status.mini {
+  margin-left: 12px;
+  font-size: 13px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: gray;
+  transition: background 0.3s ease;
+}
+
+.status-dot.online {
+  background: #00ff6a;
+}
+
+.status-dot.checking {
+  background: #888;
+}
+
+.dots::after {
+  content: "";
+  animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+  0%   { content: ""; }
+  33%  { content: "."; }
+  66%  { content: ".."; }
+  100% { content: "..."; }
+}
+
       
     </style>
 </head>
@@ -359,18 +450,28 @@ section {
 <body>
 <div id="scroll-progress"></div>
   <div id="mini-header">
-    countries-sullivan.gl.joinmc.link
+  countries-sullivan.gl.joinmc.link
+  <span class="server-status mini">
+    <span class="status-dot checking"></span>
+    <span class="status-text">Checking<span class="dots">...</span></span>
+  </span>
+</div>
+    
 </div>
 
 <header>
+  
     <h1><u>SULLIVAN-SMP</u></h1>
     <h2> 24/7 HomeMade Minecraft Survival Server </h2>
-  <h3 id="server-ip" style="cursor:pointer">IP: <span style="color:#ffea00;">countries-sullivan.gl.joinmc.link</span> (nhấn để copy) </h3>
-    <h3>Phiên bản game: 1.21.11 (Newest)</h3>
-	<h3>Server hoạt động từ: 01/01/2026</h3>
-  <p> - </p>
+  <h3 id="server-ip" style="cursor:pointer">IP: <span style="color:#ffea00;">countries-sullivan.gl.joinmc.link</span> - Minecraft 1.21.11 </h3>
+<div id="server-status" class="status-box checking">
+  <span class="dot"></span>
+  <span id="status-text">Checking server status<span id="dots">...</span></span>
+</div>  
+  <p class="spacer"></p>
+  <p class="spacer"></p>
   <img src="https://i.imgur.com/osQ1142.jpeg" class="logo" alt="SullivanSMP Logo"  loading="lazy">
-  <p> - </p>
+  <p class="spacer"></p>
   <h3>Server có sử dụng Whitelist vì mục đích an toàn</h3>
   <h3>Nếu muốn tham gia, hãy liên hệ và gửi [Tên Game] qua các DM Discord bên dưới!</h3>
 
@@ -636,11 +737,6 @@ section {
     const progress = (scrollTop / scrollHeight) * 100;
     document.getElementById("scroll-progress").style.width = progress + "%";
 });
-  
-  document.getElementById("server-ip").addEventListener("click", () => {
-    navigator.clipboard.writeText("countries-sullivan.gl.joinmc.link");
-    alert("IP copied to clipboard!");
-});
 
   window.addEventListener("scroll", () => {
     document.getElementById("mini-header").style.display =
@@ -658,7 +754,129 @@ section {
     });
 });
 
+ const dots = document.getElementById("dots");
+let dotCount = 0;
+
+/* typing dots animation */
+const dotInterval = setInterval(() => {
+  dotCount = (dotCount + 1) % 4;
+  dots.textContent = ".".repeat(dotCount);
+}, 500);
+
+  const ipEl = document.getElementById("server-ip");
+
+// create tooltip once
+const copyTooltip = document.createElement("div");
+copyTooltip.className = "copy-tooltip";
+copyTooltip.textContent = "Copied";
+document.body.appendChild(copyTooltip);
+
+ipEl.addEventListener("click", (e) => {
+  navigator.clipboard.writeText("countries-sullivan.gl.joinmc.link");
+
+  copyTooltip.style.left = e.clientX + "px";
+  copyTooltip.style.top = e.clientY + "px";
+
+  copyTooltip.classList.add("show");
+
+  clearTimeout(copyTooltip.hideTimer);
+  copyTooltip.hideTimer = setTimeout(() => {
+    copyTooltip.classList.remove("show");
+  }, 900);
+});
+
+  const statusDots = document.querySelectorAll(".status-dot");
+const statusTexts = document.querySelectorAll(".status-text");
+
+function setStatusOnline() {
+  statusDots.forEach(dot => {
+        dot.classList.remove("checking");
+
+    /* EDIT THE SERVER STATUS MANUALLY DOWN HERE */
+
+    
+
+    
+
+    
+    
+    
+    
+    dot.classList.add("offline");
+  });
+
+  statusTexts.forEach(text => {
+    text.textContent = "Server offline";
+    
+    
+    
+    
+
+    
+    
+/* EDIT THE SERVER STATUS MANUALLY UP HERE */
+
+  });
+}
+
+// fake checking delay
+setTimeout(setStatusOnline, 3000);
+
   
+/* delay before real check */
+setTimeout(() => {
+  fetch("https://api.mcsrvstat.us/2/countries-sullivan.gl.joinmc.link")
+    .then(res => res.json())
+    .then(data => {
+      clearInterval(dotInterval);
+
+      const dot = document.querySelector(".status-box .dot");
+      const text = document.getElementById("status-text");
+      const box = document.getElementById("server-status");
+
+      dots.remove();
+
+      box.classList.remove("checking");
+
+      if (data.online) {
+        dot.style.background = "#00ff6a";
+        text.textContent = `Server Online · ${data.players.online}/${data.players.max} players`;
+      } else {
+        
+/* EDIT THE SERVER STATUS MANUALLY DOWN HERE */
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        dot.style.background = "#ff3b3b";
+        text.textContent = "Server Offline";
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+/* EDIT THE SERVER STATUS MANUALLY UP HERE */
+
+      }
+    })
+    .catch(() => {
+      clearInterval(dotInterval);
+      document.getElementById("status-text").textContent = "Status unavailable";
+    });
+}, 3000);
+
 
 </script>
   
@@ -667,6 +885,7 @@ section {
 </body>
 
 </html>
+
 
 
 
