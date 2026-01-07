@@ -443,6 +443,59 @@ section {
   100% { content: "..."; }
 }
 
+      .server-status-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* shared pill style */
+.server-status,
+.server-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    font-weight: 600;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+/* dots */
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+/* states */
+.online .dot {
+    background: #00ff66;
+    box-shadow: 0 0 6px #00ff66;
+}
+
+.offline .dot {
+    background: #ff4444;
+    box-shadow: 0 0 6px #ff4444;
+}
+
+.checking .dot {
+    background: #aaaaaa;
+    animation: blink 1.2s infinite;
+}
+
+/* typing dots effect */
+@keyframes blink {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+      
       
     </style>
 </head>
@@ -468,6 +521,36 @@ section {
   <span class="dot"></span>
   <span id="status-text">Checking server status<span id="dots">...</span></span>
 </div>  
+  <div class="server-status-wrap">
+
+    
+    
+    
+    
+    
+    <!--
+
+
+
+
+
+    <div class="server-note checking" id="serverNote">
+        <span id="noteText">xxx</span>
+    </div>
+
+
+
+
+
+-->
+    
+    
+    
+    
+    
+    
+</div>
+
   <p class="spacer"></p>
   <p class="spacer"></p>
   <img src="https://i.imgur.com/osQ1142.jpeg" class="logo" alt="SullivanSMP Logo"  loading="lazy">
@@ -876,6 +959,7 @@ setTimeout(() => {
 </body>
 
 </html>
+
 
 
 
