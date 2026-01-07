@@ -504,10 +504,6 @@ section {
 <div id="scroll-progress"></div>
   <div id="mini-header">
   countries-sullivan.gl.joinmc.link
-  <span class="server-status mini">
-    <span class="status-dot checking"></span>
-    <span class="status-text">Checking<span class="dots">...</span></span>
-  </span>
 </div>
     
 </div>
@@ -520,29 +516,31 @@ section {
 <div id="server-status" class="status-box checking">
   <span class="dot"></span>
   <span id="status-text">Checking server status<span id="dots">...</span></span>
-</div>  
-  <div class="server-status-wrap">
+</div>
+  
+  
+  
 
     
     
     
     
     
-    <!--
+    
 
 
 
-
-
+<!--
+<div class="server-status-wrap">
     <div class="server-note checking" id="serverNote">
         <span id="noteText">xxx</span>
     </div>
-
-
-
-
-
 -->
+
+
+
+
+
     
     
     
@@ -867,30 +865,6 @@ const statusTexts = document.querySelectorAll(".status-text");
 function setStatusOnline() {
   statusDots.forEach(dot => {
         dot.classList.remove("checking");
-
-    /* EDIT THE SERVER STATUS MANUALLY DOWN HERE */
-
-    
-
-    
-
-    
-    
-    
-    
-    dot.classList.add("online");
-  });
-
-  statusTexts.forEach(text => {
-    text.textContent = "Server online";
-    
-    
-    
-    
-
-    
-    
-/* EDIT THE SERVER STATUS MANUALLY UP HERE */
 
   });
 }
