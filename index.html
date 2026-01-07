@@ -795,11 +795,11 @@ function setStatusOnline() {
     
     
     
-    dot.classList.add("offline");
+    dot.classList.add("online");
   });
 
   statusTexts.forEach(text => {
-    text.textContent = "Server offline";
+    text.textContent = "Server online";
     
     
     
@@ -847,8 +847,8 @@ setTimeout(() => {
         
         
         
-        dot.style.background = "#ff3b3b";
-        text.textContent = "Server Offline";
+        dot.style.background = "#00ff00";
+        text.textContent = "Server Online";
         /* RED:#ff3b3b  -  GREEN: #00ff00*/
         
         
@@ -876,6 +876,7 @@ setTimeout(() => {
 </body>
 
 </html>
+
 
 
 
